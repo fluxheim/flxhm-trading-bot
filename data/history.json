@@ -1,0 +1,23 @@
+{
+  "runs": [
+    {
+      "timestamp": "2026-07-22T23:09:35.723485",
+      "symbols": [
+        {
+          "symbol": "AAPL",
+          "error": "single positional indexer is out-of-bounds"
+        },
+        {
+          "symbol": "TSLA",
+          "error": "single positional indexer is out-of-bounds"
+        },
+        {
+          "symbol": "SPY",
+          "error": "single positional indexer is out-of-bounds"
+        }
+      ],
+      "portfolio_value": 100000.0,
+      "cash": 100000.0
+    }
+  ]
+}
