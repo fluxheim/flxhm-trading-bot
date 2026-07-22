@@ -40,19 +40,31 @@ HISTORY_FILE = Path(__file__).parent / "data" / "history.json"
 def get_bars(symbol, limit=100):
     """Pull daily price bars for a symbol from Alpaca's data API."""
     url = f"{ALPACA_DATA_URL}/v2/stocks/{symbol}/bars"
+    end = datetime.datetime.utcnow() - datetime.timedelta(minutes=20)
+    start = end - datetime.timedelta(days=250)
     params = {
         "timeframe": "1Day",
         "limit": limit,
         "adjustment": "raw",
         "feed": "iex",
+        "start": start.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "end": end.strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     resp = requests.get(url, headers=HEADERS, params=params)
+    body_preview = resp.text[:500]
     resp.raise_for_status()
-    bars = resp.json()["bars"]
+    bars = resp.json().get("bars") or []
+    if len(bars) < LONG_WINDOW + 2:
+        raise ValueError(
+            f"Not enough bars returned for {symbol} ({len(bars)} found, "
+            f"need at least {LONG_WINDOW + 2}). Raw API response preview: "
+            f"{body_preview}"
+        )
     df = pd.DataFrame(bars)
     df["t"] = pd.to_datetime(df["t"])
     df.rename(columns={"c": "close"}, inplace=True)
     return df
+
 
 
 def get_position(symbol):
