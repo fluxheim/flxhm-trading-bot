@@ -18,6 +18,25 @@
       ],
       "portfolio_value": 100000.0,
       "cash": 100000.0
+    },
+    {
+      "timestamp": "2026-07-22T23:27:42.240692",
+      "symbols": [
+        {
+          "symbol": "AAPL",
+          "error": "single positional indexer is out-of-bounds"
+        },
+        {
+          "symbol": "TSLA",
+          "error": "single positional indexer is out-of-bounds"
+        },
+        {
+          "symbol": "SPY",
+          "error": "single positional indexer is out-of-bounds"
+        }
+      ],
+      "portfolio_value": 100000.0,
+      "cash": 100000.0
     }
   ]
 }
