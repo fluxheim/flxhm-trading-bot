@@ -44,6 +44,7 @@ def get_bars(symbol, limit=100):
         "timeframe": "1Day",
         "limit": limit,
         "adjustment": "raw",
+        "feed": "iex",
     }
     resp = requests.get(url, headers=HEADERS, params=params)
     resp.raise_for_status()
