@@ -1702,6 +1702,43 @@
       ],
       "portfolio_value": 99983.1,
       "cash": 99983.1
+    },
+    {
+      "timestamp": "2026-09-23T23:35:19.822453",
+      "symbols": [
+        {
+          "symbol": "AAPL",
+          "date": "2026-04-15T04:00:00+00:00",
+          "close": 266.31,
+          "short_ma": 254.63,
+          "long_ma": 260.79,
+          "signal": "hold",
+          "holding": false,
+          "action_taken": null
+        },
+        {
+          "symbol": "TSLA",
+          "date": "2026-04-15T04:00:00+00:00",
+          "close": 392.0,
+          "short_ma": 366.98,
+          "long_ma": 391.1,
+          "signal": "hold",
+          "holding": false,
+          "action_taken": null
+        },
+        {
+          "symbol": "SPY",
+          "date": "2026-04-15T04:00:00+00:00",
+          "close": 699.75,
+          "short_ma": 662.04,
+          "long_ma": 674.24,
+          "signal": "hold",
+          "holding": false,
+          "action_taken": null
+        }
+      ],
+      "portfolio_value": 99983.1,
+      "cash": 99983.1
     }
   ]
 }
